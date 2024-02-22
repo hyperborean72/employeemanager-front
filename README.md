@@ -1,27 +1,51 @@
-# EmployeemanagerFront
+# Employeemanager front application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+Install the Angular CLI globally - глобальная установка Angular CLI:
+npm install -g @angular/cli
 
-## Development server
+[or npm uninstall -g @angular/cli to deinstall, then run npm cache clean]
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Установка будет произведена в 
+C:\Users\<USER>\AppData\Roaming\npm\node_modules
 
-## Code scaffolding
+В моем случае установилась CLI v.17.2.0
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Однако Angular CLI requires a minimum Node.js version of v18.13
 
-## Build
+И эти версии Node.js на моем Win 7 не поддержваются
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Как установить не последнюю, а предыдущую версию cli:
 
-## Running unit tests
+npm install -g @angular/cli@wished.version.here
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Как обновиться:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+1) To use the NodeJS update command, first Clear the npm cache:
 
-## Further help
+npm cache clean -f
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+then install the n, Node's package manager:
+
+npm install -g n
+
+With the n tool installed, type the following command to update to the latest version:
+
+n latest
+
+2) Use the NVM utility to specify the version that you want to install. The following command installs NodeJS version 20.3.0:
+
+npm install 20.3.0
+
+сервис для определенного класса (employee в нашем случае) генерируется следующим образом:
+ng generate service employee --skipTests=true
+
+
+Если скрипт отказывается запускаться в Power Shell, найдите и удалитте 
+C:\Users\Stepanov Andrey\AppData\Roaming\npm\ng.ps1
+и удалите кэш then try clearing the npm cache at C:\Users\%username%\AppData\Roaming\npm-cache\
+(наверное, результат тот же, что и командой npm cache clean -f)
+
+ЛИБО исполнив
+
+
